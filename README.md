@@ -5,6 +5,8 @@ Replaces regular space with a non-breaking space in places where line break shou
 
 Actually Vlnka provides a Smarty block helper for usage in an ATK14 application or any other application which uses [Smarty](http://www.smarty.net/) as the template engine.
 
+In an ATK14 application Vlnka takes effect only when Czech or Slovak language is used.
+
 Basic usage
 -----------
 
