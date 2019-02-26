@@ -1,9 +1,9 @@
 Vlnka
 =====
 
-Replaces regular space with a non-breaking space in places where line break should not occur as per Czech language spec
+Replaces regular space with a non-breaking space in places where line break should not occur as per Czech language spec.
 
-Actualy Vlnka provides a Smarty block helper for usage in an ATK14 application.
+Actually Vlnka provides a Smarty block helper for usage in an ATK14 application or any other application which uses [Smarty](http://www.smarty.net/) as the template engine.
 
 Basic usage
 -----------
