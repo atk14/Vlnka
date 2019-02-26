@@ -1,0 +1,24 @@
+{
+        "name": "atk14/vlnka",
+        "type": "library",
+        "description": "Replaces regular space with a non-breaking space in places where line break should not occur as per Czech language spec",
+        "keywords": ["atk14","templating"],
+        "homepage": "https://github.com/atk14/Vlnka",
+        "license": ["MIT"],
+        "authors": [
+                {
+                        "name": "ATK14 Development Team",
+                        "homepage": "https://github.com/orgs/atk14/people"
+                }
+        ],
+        "require": {
+                "php": ">=5.3.0",
+                "mikulas/vlna": ">=1.0.1"
+        },
+        "require-dev": {
+                "phpunit/phpunit": "4.8.*"
+        },
+        "autoload": {
+								"files": ["src/app/helpers/block.vlnka.php"]
+        }
+}
