@@ -9,32 +9,47 @@ class TcVlnka extends TcBase {
 		$params = array("vlnka" => "~");
 		$ATK14_GLOBAL->lang = "cs";
 
-		$content = "Dr. Novák má čas v neděli!";
-		$output = smarty_block_vlnka($params,$content,$template,$repeat);
-		$this->assertEquals("Dr.~Novák má čas v~neděli!",$output);
+		$this->_vlnka(
+			"Dr. Novák má čas v neděli!",
+			"Dr.~Novák má čas v~neděli!"
+		);
 
-		$content = '<span title="Dr. Novák">Dr. Novák</span> má čas <span title="v neděli">v neděli</span>!';
-		$output = smarty_block_vlnka($params,$content,$template,$repeat);
-		$this->assertEquals('<span title="Dr. Novák">Dr.~Novák</span> má čas <span title="v neděli">v~neděli</span>!',$output);
+		$this->_vlnka(
+			'<span title="Dr. Novák">Dr. Novák</span> má čas <span title="v neděli">v neděli</span>!',
+			'<span title="Dr. Novák">Dr.~Novák</span> má čas <span title="v neděli">v~neděli</span>!'
+		);
 
-		$content = '<strong>-30%</strong> Sleva';
-		$output = smarty_block_vlnka($params,$content,$template,$repeat);
-		$this->assertEquals('<strong>-30%</strong> Sleva',$output);
+		$this->_vlnka(
+			'<strong>-30%</strong> Sleva',
+			'<strong>-30%</strong> Sleva'
+		);
 
-		$content = 'v <strong>neděli</strong> bude krásně';
-		$output = smarty_block_vlnka($params,$content,$template,$repeat);
-		$this->assertEquals('v~<strong>neděli</strong> bude krásně',$output);
+		$this->_vlnka(
+			'v <strong>neděli</strong> bude krásně',
+			'v~<strong>neděli</strong> bude krásně'
+		);
 
-		$content = 'v<strong>neděli</strong> bude krásně';
-		$output = smarty_block_vlnka($params,$content,$template,$repeat);
-		$this->assertEquals('v<strong>neděli</strong> bude krásně',$output);
+		$this->_vlnka(
+			'v<strong>neděli</strong> bude krásně',
+			'v<strong>neděli</strong> bude krásně'
+		);
 
-		// English
+		// Switching from Czech to English
 		$ATK14_GLOBAL->lang = "en";
-		//
-		$content = '<span title="Dr. Novák">Dr. Novák</span> má čas <span title="v neděli">v neděli</span>!';
-		$output = smarty_block_vlnka($params,$content,$template,$repeat);
-		$this->assertEquals('<span title="Dr. Novák">Dr. Novák</span> má čas <span title="v neděli">v neděli</span>!',$output);
 
+		$this->_vlnka(
+			'<span title="Dr. Novák">Dr. Novák</span> má čas <span title="v neděli">v neděli</span>!',
+			'<span title="Dr. Novák">Dr. Novák</span> má čas <span title="v neděli">v neděli</span>!'
+		);
+	}
+
+	function _vlnka($source,$expected){
+		$template = null;
+		$repeat = false;
+		$params = array("vlnka" => "~");
+
+		$content = "Dr. Novák má čas v neděli!";
+		$output = smarty_block_vlnka($params,$source,$template,$repeat);
+		$this->assertEquals($expected,$output);
 	}
 }
