@@ -2,7 +2,7 @@
         "name": "atk14/vlnka",
         "type": "library",
         "description": "Replaces regular space with a non-breaking space in places where line break should not occur as per Czech language spec",
-        "keywords": ["atk14","templating"],
+        "keywords": ["atk14","templating","vlna","nbsp","space"],
         "homepage": "https://github.com/atk14/Vlnka",
         "license": ["MIT"],
         "authors": [
