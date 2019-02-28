@@ -34,6 +34,16 @@ class TcVlnka extends TcBase {
 			'v<strong>neděli</strong> bude krásně'
 		);
 
+		$this->_vlnka(
+			'Cena: 12,50 Kč',
+			'Cena: 12,50~Kč'
+		);
+
+		$this->_vlnka(
+			'Datum: 28. 2. 2019',
+			'Datum: 28.~2.~2019'
+		);
+
 		// Switching from Czech to English
 		$ATK14_GLOBAL->lang = "en";
 
