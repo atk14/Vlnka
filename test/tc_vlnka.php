@@ -49,7 +49,11 @@ class TcVlnka extends TcBase {
 		$params = array("vlnka" => "~");
 
 		$content = "Dr. Novák má čas v neděli!";
+
 		$output = smarty_block_vlnka($params,$source,$template,$repeat);
 		$this->assertEquals($expected,$output);
+
+		$output2 = smarty_modifier_vlnka($source,$params["vlnka"]);
+		$this->assertEquals($expected,$output2);
 	}
 }

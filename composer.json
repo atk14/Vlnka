@@ -19,6 +19,9 @@
                 "phpunit/phpunit": "4.8.*"
         },
         "autoload": {
-								"files": ["src/app/helpers/block.vlnka.php"]
+                "files": [
+                  "src/app/helpers/block.vlnka.php",
+                  "src/app/helpers/modifier.vlnka.php"
+                 ]
         }
 }
