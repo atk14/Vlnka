@@ -34,7 +34,7 @@ Installation
 Just use the Composer:
 
     cd path/to/your/atk14/project/
-    composer require atk14/vlnka dev-master
+    composer require atk14/vlnka
 
 License
 -------
