@@ -16,7 +16,7 @@
                 "mikulas/vlna": ">=1.0.1"
         },
         "require-dev": {
-                "phpunit/phpunit": "4.8.*"
+                "atk14/tester": "*"
         },
         "autoload": {
                 "files": [
