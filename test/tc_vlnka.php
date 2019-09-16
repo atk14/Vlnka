@@ -4,9 +4,6 @@ class TcVlnka extends TcBase {
 	function test(){
 		global $ATK14_GLOBAL;
 
-		$template = null;
-		$repeat = false;
-		$params = array("vlnka" => "~");
 		$ATK14_GLOBAL->lang = "cs";
 
 		$this->_vlnka(
@@ -50,6 +47,20 @@ class TcVlnka extends TcBase {
 		$this->_vlnka(
 			'<span title="Dr. Novák">Dr. Novák</span> má čas <span title="v neděli">v neděli</span>!',
 			'<span title="Dr. Novák">Dr. Novák</span> má čas <span title="v neděli">v neděli</span>!'
+		);
+	}
+
+	function test_hyphens(){
+		$non_breaking_hyphen = "\xE2\x80\x91";
+
+		$this->_vlnka(
+			"The Matrix - Reloaded",
+			"The Matrix~- Reloaded"
+		);
+
+		$this->_vlnka(
+			"E-shop, e-mail, know-how",
+			"E{$non_breaking_hyphen}shop, e{$non_breaking_hyphen}mail, know{$non_breaking_hyphen}how"
 		);
 	}
 

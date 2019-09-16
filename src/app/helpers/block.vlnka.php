@@ -33,6 +33,9 @@ function smarty_block_vlnka($params,$content,$template,&$repeat){
 	}
 	$content = strtr($content,$tr_table);
 
+	$non_breaking_hyphen = "\xE2\x80\x91"; // &#x2011, &#8209;
+	$content = preg_replace('/([a-z0-9])-([a-z0-9])/i',"\\1$non_breaking_hyphen\\2",$content); // "e-shop, know-how" -> "e{$non_breaking_hyphen}shop, know{$non_breaking_hyphen}how"
+
 	$vlna = new Mikulas\Vlna($params["vlnka"]);
 	$output = $vlna($content);
 
