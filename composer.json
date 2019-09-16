@@ -14,7 +14,7 @@
         "require": {
                 "php": ">=5.3.0",
                 "mikulas/vlna": ">=1.0.1",
-                "atk14/functions": "^1.0"
+                "atk14/functions": "^1.0, >=1.0.1"
         },
         "require-dev": {
                 "atk14/tester": "*"
