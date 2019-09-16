@@ -22,8 +22,23 @@ class TcVlnka extends TcBase {
 		);
 
 		$this->_vlnka(
+			'v neděli bude krásně',
+			'v~neděli bude krásně'
+		);
+
+		$this->_vlnka(
+			'V neděli bude krásně',
+			'V~neděli bude krásně'
+		);
+
+		$this->_vlnka(
 			'v <strong>neděli</strong> bude krásně',
 			'v~<strong>neděli</strong> bude krásně'
+		);
+
+		$this->_vlnka(
+			'V <strong>neděli</strong> bude krásně',
+			'V~<strong>neděli</strong> bude krásně'
 		);
 
 		$this->_vlnka(
