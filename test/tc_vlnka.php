@@ -64,6 +64,14 @@ class TcVlnka extends TcBase {
 		);
 	}
 
+	function test_issue_1(){
+		$this->_vlnka(
+			"<li><strong>Stanovte si relevantní KPI's</strong> - stanovte si cíle, rozpočty a podmínky úspěchu kampaně.</li>",
+			"<li><strong>Stanovte si relevantní KPI's</strong>~- stanovte si cíle, rozpočty a~podmínky úspěchu kampaně.</li>"
+		);
+	}
+
+
 	function _vlnka($source,$expected){
 		$template = null;
 		$repeat = false;

@@ -30,8 +30,10 @@ function smarty_block_vlnka($params,$content,$template,&$repeat){
 		$tr_table_rev[$replacement_alt] = $match;
 		$replacement_alt = $vlnka.substr($replacement,1,strlen($replacement)-1);
 		$tr_table_rev[$replacement_alt] = $match;
+		$replacement_alt = $vlnka.substr($replacement,1,strlen($replacement)-2).$vlnka;
+		$tr_table_rev[$replacement_alt] = $match;
 	}
-	$content = strtr($content,$tr_table);
+	$content = EasyReplace($content,$tr_table);
 
 	$non_breaking_hyphen = "\xE2\x80\x91"; // &#x2011, &#8209;
 	$content = preg_replace('/([a-z0-9])-([a-z0-9])/i',"\\1$non_breaking_hyphen\\2",$content); // "e-shop, know-how" -> "e{$non_breaking_hyphen}shop, know{$non_breaking_hyphen}how"
@@ -40,7 +42,7 @@ function smarty_block_vlnka($params,$content,$template,&$repeat){
 	$output = $vlna($content);
 
 	// replacing tags back
-	$output = strtr($output,$tr_table_rev);
+	$output = EasyReplace($output,$tr_table_rev);
 
 	return $output;
 }
