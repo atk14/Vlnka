@@ -6,6 +6,8 @@ function smarty_block_vlnka($params,$content,$template,&$repeat){
 		return;
 	}
 
+	$content = (string)$content;
+
 	if($ATK14_GLOBAL && !in_array($ATK14_GLOBAL->getLang(),array("cs","sk"))){
 		return $content;
 	}
