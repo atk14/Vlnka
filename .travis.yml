@@ -1,16 +1,29 @@
 # vim:ts=2:sw=2:et
-dist: trusty
+os: linux
+
+# Partner Queue Solution, no credits are consumed
+arch: ppc64le
 
 language: php
 
-php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-  - 7.1
-  - 7.2
-  - 7.3
+jobs:
+  include:
+    - php: 5.6
+      dist: xenial
+    - php: 7.0
+      dist: xenial
+    - php: 7.1
+      dist: xenial
+    - php: 7.2
+      dist: xenial
+    - php: 7.3
+      dist: xenial
+    - php: 7.4
+      dist: focal
+    - php: 8.0
+      dist: focal
+    - php: 8.1
+      dist: focal
 
 before_install:
   - composer update --dev
