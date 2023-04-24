@@ -8,7 +8,7 @@ function smarty_block_vlnka($params,$content,$template,&$repeat){
 
 	$content = (string)$content;
 
-	if($ATK14_GLOBAL && !in_array($ATK14_GLOBAL->getLang(),array("cs","sk"))){
+	if(isset($ATK14_GLOBAL) &&!in_array($ATK14_GLOBAL->getLang(),array("cs","sk"))){
 		return $content;
 	}
 
